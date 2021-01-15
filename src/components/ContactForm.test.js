@@ -25,11 +25,26 @@ test("testing form", () => {
   //   const button = screen.getByRole("button", {name: 'example'});
   const button = screen.getByRole("button");
   //   console.log(button);
-  //   userEvent.click(button);
+  userEvent.click(button);
 
   //assert
-  const newInput = screen.findByText("shazeen");
-  newInput.then((input) => {
+  const firstNameInput = screen.findByText("shazeen");
+  firstNameInput.then((input) => {
+    expect(input).toBeInTheDocument();
+  });
+
+  const lastNameInput = screen.findByText("fabius");
+  lastNameInput.then((input) => {
+    expect(input).toBeInTheDocument();
+  });
+
+  const emailInput = screen.findByText("shazeen@gmail.com");
+  emailInput.then((input) => {
+    expect(input).toBeInTheDocument();
+  });
+
+  const messageInput = screen.findByText("woot woot");
+  messageInput.then((input) => {
     expect(input).toBeInTheDocument();
   });
 });
