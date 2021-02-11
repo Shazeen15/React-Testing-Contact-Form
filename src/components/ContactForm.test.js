@@ -17,4 +17,8 @@ test("fill out form and check for output of the form", () => {
   const message = screen.getByLabelText(/message/i);
 
   //what i want to test to be typed into the inputs
+  userEvent.type(firstName, "Sha");
+  userEvent.type(lastName, "Fabius");
+  userEvent.type(email, "shazeen@gmail.com");
+  userEvent.type(message, "react testing");
 });
